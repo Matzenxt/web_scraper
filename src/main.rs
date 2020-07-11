@@ -1,5 +1,6 @@
 use scraper::{Html, Selector};
 use reqwest;
+use regex::Regex;
 
 fn main() {
     println!("Hello, world!");
@@ -26,10 +27,10 @@ fn test(url: &str) {
     let mut position: usize = 0;
     println!("Labels:");
     for version_label in html.select(&selector_version_label).enumerate() {
-        let temp_text = version_label.1.text().collect::<Vec<_>>();
+        let temp_text: String = version_label.1.text().collect();
 
         if temp_text.contains(&"\nVersion\n") {
-            println!("{:?}", temp_text);
+            println!("{}", temp_text);
             println!("Position: {}", version_label.0);
             position = version_label.0;
             break;
@@ -41,8 +42,8 @@ fn test(url: &str) {
     println!("Content:");
     for version_number in html.select(&selector_version_number).enumerate() {
         if version_number.0 == position {
-            let temp_text = version_number.1.text().collect::<Vec<_>>();
-            println!("{:?}", temp_text);
+            let temp_text: String = version_number.1.text().collect();
+            println!("{}", &temp_text);
         }
     }
 }
