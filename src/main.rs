@@ -1,6 +1,5 @@
 use scraper::{Html, Selector};
 use reqwest;
-use regex::Regex;
 
 fn main() {
     println!("Hello, world!");
