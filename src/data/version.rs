@@ -19,3 +19,5 @@ impl Version {
         println!("Version: {}.{}.{}", self.major, self.minor, self.patch);
     }
 }
+
+// TODO: Impl Ord

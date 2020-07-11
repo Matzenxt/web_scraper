@@ -4,7 +4,7 @@ use crate::data::version::Version;
 pub struct Plugin {
     pub name: String,
     pub version: Version,
-    url: String,
+    pub url: String,
 }
 
 impl Plugin {
