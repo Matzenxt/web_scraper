@@ -1,12 +1,20 @@
 use scraper::{Html, Selector};
 use reqwest;
+use crate::data::version::Version;
+use crate::data::plugin::Plugin;
+
+mod data;
 
 fn main() {
     println!("Hello, world!");
 
     let url = "https://store.shopware.com/media57848636557/facebook-pixel-einbinden.html";
 
-    test(url);
+    //test(url);
+
+    let version_string = String::from("6.6.6");
+    let plugin: Plugin = Plugin::new("Test Plugin".to_string(), version_string);
+    plugin.print_information();
 
     println!("End main");
 }
@@ -38,11 +46,19 @@ fn test(url: &str) {
 
     println!("\n\n");
 
+    let mut version_string: String = String::from("0.0.0");
     println!("Content:");
     for version_number in html.select(&selector_version_number).enumerate() {
         if version_number.0 == position {
             let temp_text: String = version_number.1.text().collect();
             println!("{}", &temp_text);
+            version_string = temp_text;
+
+            let test: Vec<&str> = version_string.split('.').collect::<Vec<&str>>();
+            println!("asdf");
+            for te in test {
+                println!("a: {}", te);
+            }
         }
     }
 }
