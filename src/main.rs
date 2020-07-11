@@ -13,7 +13,7 @@ fn main() {
     //test(url);
 
     let version_string = String::from("6.6.6");
-    let plugin: Plugin = Plugin::new("Test Plugin".to_string(), version_string);
+    let plugin: Plugin = Plugin::new("Test Plugin".to_string(), version_string, url.to_string());
     plugin.print_information();
 
     println!("End main");
