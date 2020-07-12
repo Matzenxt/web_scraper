@@ -1,10 +1,11 @@
 use crate::data::plugin::Plugin;
 use crate::data::version::Version;
+use std::fmt::{Formatter, Display, Result};
 
 #[derive(Default, Debug)]
 pub struct Updatable {
-    plugin: Plugin,
-    version: Version,
+    pub plugin: Plugin,
+    pub version: Version,
 }
 
 impl Updatable {
@@ -16,7 +17,17 @@ impl Updatable {
     }
 
     pub fn print(&self) {
-        println!("Update: {}", plugin.name);
-        println!("    {} -> {}", plugin.version, scraped_version);
+        println!("Update: {}", self.plugin.name);
+        println!("    {} -> {}", self.plugin.version, self.version);
+    }
+}
+
+impl Display for Updatable {
+    fn fmt(&self, f: &mut Formatter<'_>) -> Result {
+        write!(
+            f,
+            "Update: {}\n        {} -> {}",
+            self.plugin.name, self.plugin.version, self.version
+        )
     }
 }

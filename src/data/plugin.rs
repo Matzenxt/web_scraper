@@ -2,7 +2,7 @@ use crate::data::version::Version;
 use std::fmt::{Formatter, Display, Result};
 use serde::{Deserialize, Serialize};
 
-#[derive(Default, Debug, Serialize, Deserialize)]
+#[derive(Default, Debug, Serialize, Deserialize, Clone)]
 pub struct Plugin {
     pub name: String,
     pub version: Version,

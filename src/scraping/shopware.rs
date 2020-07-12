@@ -4,7 +4,7 @@ use reqwest;
 use crate::data::plugin::Plugin;
 use crate::data::version::Version;
 
-pub fn scrape_plugin(plugin: Plugin) {
+pub fn scrape_plugin(plugin: &Plugin) -> Version {
     let resp = reqwest::blocking::get(plugin.url.as_str()).unwrap();
     assert!(resp.status().is_success());
 
@@ -34,12 +34,7 @@ pub fn scrape_plugin(plugin: Plugin) {
         }
     }
 
-    // Creat version
+    // Creat and return version
     let scraped_version: Version = Version::new(version_string);
-
-    // Compare versions
-    if plugin.version < scraped_version {
-        println!("Update: {}", plugin.name);
-        println!("    {} -> {}", plugin.version, scraped_version);
-    }
+    scraped_version
 }
