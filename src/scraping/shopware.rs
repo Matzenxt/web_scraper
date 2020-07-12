@@ -38,9 +38,8 @@ pub fn scrape_plugin(plugin: Plugin) {
     let scraped_version: Version = Version::new(version_string);
 
     // Compare versions
-    // TODO: Not working < operation
     if plugin.version < scraped_version {
         println!("Update: {}", plugin.name);
-        println!("    {:?} -> {:?}", plugin.version, scraped_version);
+        println!("    {} -> {}", plugin.version, scraped_version);
     }
 }

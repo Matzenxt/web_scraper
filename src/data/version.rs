@@ -1,4 +1,6 @@
-#[derive(Default)]
+use std::fmt::{Display, Formatter, Result};
+
+#[derive(Default, Debug, PartialEq, Eq, PartialOrd, Ord)]
 pub struct Version {
     pub major: usize,
     pub minor: usize,
@@ -8,10 +10,11 @@ pub struct Version {
 impl Version {
     pub fn new(version_string: String) -> Version {
         let test: Vec<&str> = version_string.split('.').collect::<Vec<&str>>();
+
         Version {
-            major: test[0].parse::<usize>().unwrap(),
-            minor: test[1].parse::<usize>().unwrap(),
-            patch: test[2].parse::<usize>().unwrap(),
+            major: test[0].trim().parse::<usize>().unwrap(),
+            minor: test[1].trim().parse::<usize>().unwrap(),
+            patch: test[2].trim().parse::<usize>().unwrap(),
         }
     }
 
@@ -20,4 +23,8 @@ impl Version {
     }
 }
 
-// TODO: Impl Ord
+impl Display for Version {
+    fn fmt(&self, f: &mut Formatter<'_>) -> Result {
+        write!(f, "Version: {}.{}.{}", self.major, self.minor, self.patch)
+    }
+}

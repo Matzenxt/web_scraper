@@ -1,6 +1,7 @@
 use crate::data::version::Version;
+use std::fmt::{Formatter, Display, Result};
 
-#[derive(Default)]
+#[derive(Default, Debug)]
 pub struct Plugin {
     pub name: String,
     pub version: Version,
@@ -21,5 +22,11 @@ impl Plugin {
         println!("  - Name: {}", self.name);
         println!("  - Version: {}.{}.{}", self.version.major, self.version.minor, self.version.patch);
         println!("  - URL: {}", self.url);
+    }
+}
+
+impl Display for Plugin {
+    fn fmt(&self, f: &mut Formatter<'_>) -> Result {
+        write!(f, "Name: {}, Version: {}", self.name, self.version)
     }
 }
