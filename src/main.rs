@@ -1,11 +1,18 @@
 use crate::data::version::Version;
 use crate::data::plugin::Plugin;
+use crate::data::registry::Registry;
 
 mod data;
 mod scraping;
 
 fn main() {
     println!("Hello, world!");
+
+    let registry: Registry = Registry::new("to_scrape_shopware.json".to_string());
+
+    for plugin in registry.plugins {
+        plugin.print_information();
+    }
 
     let url = "https://store.shopware.com/media57848636557/facebook-pixel-einbinden.html";
 

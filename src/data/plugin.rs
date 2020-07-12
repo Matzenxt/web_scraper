@@ -1,7 +1,8 @@
 use crate::data::version::Version;
 use std::fmt::{Formatter, Display, Result};
+use serde::{Deserialize, Serialize};
 
-#[derive(Default, Debug)]
+#[derive(Default, Debug, Serialize, Deserialize)]
 pub struct Plugin {
     pub name: String,
     pub version: Version,

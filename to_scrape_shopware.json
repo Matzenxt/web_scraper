@@ -1,0 +1,22 @@
+{
+  "plugins": [
+    {
+      "name": "Facebook Pixel einbinden",
+      "version": {
+        "major": 1,
+        "minor": 5,
+        "patch": 3
+      },
+      "url": "https://store.shopware.com/media57848636557/facebook-pixel-einbinden.html"
+    },
+    {
+      "name": "Test Plugin",
+      "version": {
+        "major": 1,
+        "minor": 3,
+        "patch": 7
+      },
+      "url": "https://store.shopware.com/media57848636557/facebook-pixel-einbinden.html"
+    }
+  ]
+}

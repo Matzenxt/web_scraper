@@ -1,6 +1,7 @@
 use std::fmt::{Display, Formatter, Result};
+use serde::{Deserialize, Serialize};
 
-#[derive(Default, Debug, PartialEq, Eq, PartialOrd, Ord)]
+#[derive(Default, Debug, PartialEq, Eq, PartialOrd, Ord, Serialize, Deserialize)]
 pub struct Version {
     pub major: usize,
     pub minor: usize,
