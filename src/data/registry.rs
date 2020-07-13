@@ -7,6 +7,8 @@ use crate::data::version::Version;
 
 #[derive(Serialize, Deserialize)]
 pub struct Registry {
+    pub name: String,
+    pub version: Version,
     pub plugins: Vec<Plugin>,
 }
 
@@ -38,4 +40,6 @@ impl Registry {
 
         result
     }
+
+    // TODO: check for system update
 }

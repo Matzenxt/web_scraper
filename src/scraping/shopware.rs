@@ -38,3 +38,8 @@ pub fn scrape_plugin(plugin: &Plugin) -> Version {
     let scraped_version: Version = Version::new(version_string);
     scraped_version
 }
+
+// TODO: impl scraper for system version
+pub fn scrape_system_version() {
+
+}

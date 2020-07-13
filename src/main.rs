@@ -11,6 +11,8 @@ fn main() {
 
     let registry: Registry = Registry::new("to_scrape_shopware.json".to_string());
 
+    println!("{}", registry.name);
+    println!("{}", registry.version);
     println!("{} plugins to check:", registry.plugins.len());
     for plugin in &registry.plugins {
         plugin.print_information();
