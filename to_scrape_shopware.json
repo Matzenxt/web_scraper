@@ -1,22 +1,58 @@
 {
   "plugins": [
     {
-      "name": "Facebook Pixel einbinden",
+      "name": "paydirekt",
       "version": {
         "major": 1,
-        "minor": 5,
-        "patch": 3
+        "minor": 1,
+        "patch": 17
       },
-      "url": "https://store.shopware.com/media57848636557/facebook-pixel-einbinden.html"
+      "url": "https://store.shopware.com/fulin44892030729f/paydirekt.html"
     },
     {
-      "name": "Test Plugin",
+      "name": "PayPal",
+      "version": {
+        "major": 2,
+        "minor": 8,
+        "patch": 0
+      },
+      "url": "https://store.shopware.com/swag828732772311f/paypal.html"
+    },
+    {
+      "name": "Händlerbund Rechtstexte",
+      "version": {
+        "major": 5,
+        "minor": 5,
+        "patch": 14
+      },
+      "url": "https://store.shopware.com/hbdev12437612166f/haendlerbund-rechtstexte-ab-version-5.2.0-bis-5.6.4.html"
+    },
+    {
+      "name": "DHL Adapter powered by Pickware",
+      "version": {
+        "major": 4,
+        "minor": 20,
+        "patch": 0
+      },
+      "url": "https://store.shopware.com/viiso53141722886f/dhl-adapter-powered-by-pickware.html"
+    },
+    {
+      "name": "CleverReach® - Newsletter Marketing",
+      "version": {
+        "major": 9,
+        "minor": 4,
+        "patch": 2
+      },
+      "url": "https://store.shopware.com/crsw00730f/cleverreach-newsletter-marketing-fuer-ihren-shopware-5-onlineshop.html"
+    },
+    {
+      "name": "Facebook Pixel",
       "version": {
         "major": 1,
-        "minor": 3,
-        "patch": 7
+        "minor": 2,
+        "patch": 2
       },
-      "url": "https://store.shopware.com/media57848636557/facebook-pixel-einbinden.html"
+      "url": "https://store.shopware.com/bilob80748613535/facebook-pixel.html"
     }
   ]
 }
