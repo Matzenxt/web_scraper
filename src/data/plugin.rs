@@ -12,9 +12,9 @@ pub struct Plugin {
 impl Plugin {
     pub fn new(name: String, version_string: String, url: String) -> Plugin {
         Plugin {
-            name: name.to_string(),
+            name,
             version: Version::new(version_string),
-            url: url.to_string(),
+            url,
         }
     }
 

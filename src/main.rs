@@ -1,5 +1,3 @@
-use crate::data::version::Version;
-use crate::data::plugin::Plugin;
 use crate::data::registry::Registry;
 use crate::data::updatable::Updatable;
 

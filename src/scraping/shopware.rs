@@ -1,5 +1,4 @@
 use scraper::{Html, Selector};
-use reqwest;
 
 use crate::data::plugin::Plugin;
 use crate::data::version::Version;
